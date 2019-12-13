@@ -62,8 +62,8 @@ export default class App extends Component{
         <Text style={styles.logoText} >Calculadora IMC</Text>
 
         <Slider
-          minimumValue={0}
-          maximumValue={140}
+          minimumValue={1}
+          maximumValue={220}
           step={0.5}
           onValueChange={(selectedValue) => this.setState({valueKg: selectedValue})}
           minimumTrackTintColor="#A08E8A" //

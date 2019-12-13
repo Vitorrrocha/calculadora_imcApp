@@ -17,7 +17,7 @@ export default class App extends Component{
 
     this.state = {
       valueKg: 70,
-      valueHeight: 1.70,
+      valueHeight: 170,
       imc: '',
       frase: ''
     };
@@ -26,7 +26,7 @@ export default class App extends Component{
 
   calcImc(){
     let state = this.state;
-        let height = this.state.valueHeight;
+        let height = this.state.valueHeight/100; //passa de cm para metros
         let bulk = this.state.valueKg;
         let imc = bulk/(height * height);
         this.state.imc = 'IMC: ' + imc.toFixed(2);
@@ -74,9 +74,9 @@ export default class App extends Component{
       <Text style={styles.textValue} >Peso: {this.state.valueKg} kg</Text>
 
       <Slider
-          minimumValue={1.00}
-          maximumValue={2.30}
-          step={0.01}
+          minimumValue={100}
+          maximumValue={230}
+          step={1}
           onValueChange={(selectedValue) => this.setState({valueHeight: selectedValue})}
           minimumTrackTintColor="#A08E8A"
           maximumTrackTintColor="#00FF00"
